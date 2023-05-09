@@ -43,8 +43,8 @@
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
 #define BAUDRATE                (115200)
-#define RX_LINE                 IfxAsclin0_RXA_P14_1_IN                 /* UART0 receive port pin                    */
-#define TX_LINE                 IfxAsclin0_TX_P14_0_OUT                 /* UART0 transmit port pin                   */
+#define RX_LINE                 IfxAsclin0_RXB_P15_3_IN                 /* UART0 receive port pin                    */
+#define TX_LINE                 IfxAsclin0_TX_P15_2_OUT                 /* UART0 transmit port pin                   */
 
 #define INTPRIO_ASCLIN0_TX      (19)                                    /* Definition of the interrupt priorities    */
 #define UART_TX_BUFFER_SIZE     (255)                                   /* Definition of the transmit buffer size    */
