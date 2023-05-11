@@ -79,7 +79,7 @@ static Ifx_SMU_FSP_Bits get_FSP_timing_settings(uint8 minFaultStateTime);
 * @param argument: None
 * @retval None
 */
-void init_SMU_FSP(void)
+void initSmuFsp(void)
 {
     /* Configure FSP output port pin */
     smu_init_pins();
@@ -157,7 +157,7 @@ static Ifx_SMU_FSP_Bits get_FSP_timing_settings(uint8 minFaultStateTime)
 * @param argument: None
 * @retval None
 */
-void run_FSP_Protocol(void)
+void runFspProtocolStub(void)
 {
     /* Delay 500 ms before triggering the Alarm */
     wait_ms(DELAY_BEFORE_ALARM);

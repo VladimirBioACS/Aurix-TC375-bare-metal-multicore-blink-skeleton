@@ -58,7 +58,7 @@ void core0_main(void)
     systemClockConfig();
 #if (SMU_ENB == 1)
     /* init SMU with fault signaling protocol */
-    init_SMU_FSP();
+    initSmuFsp();
 #endif
     /* Init debug UART with TX interrupt*/
     initASCLINUART_IT();
@@ -67,7 +67,7 @@ void core0_main(void)
     gpioPreInit();
 #if (SMU_ENB == 1)
     /* Trigger FSP alarm */
-    run_FSP_Protocol();
+    runFspProtocolStub();
 #endif
 
     while(1)
