@@ -51,17 +51,16 @@ void core0_main(void)
     /* Config system clocks */
     systemClockConfig();
 
-    /* Init debug UART */
-    initASCLINUART();
+    /* Init debug UART with TX interrupt*/
+    initASCLINUART_IT();
 
     /* Init GPIO ports */
     gpioPreInit();
-    
 
     while(1)
     {
         blinkCpu0();
-        writeASCLINUART("test msg\r\n");
+        printnl((uint8*)"debug print from UART");
     }
 }
 

@@ -77,7 +77,7 @@ void asclin0_Tx_ISR(void)
 * @param argument: Not used
 * @retval None
 */
-void initASCLINUART(void)
+void initASCLINUART_IT(void)
 {
     /* Initialize an instance of IfxAsclin_Asc_Config with default values */
     IfxAsclin_Asc_Config ascConfig;
@@ -109,16 +109,38 @@ void initASCLINUART(void)
 }
 
 /**
-* @brief UART print message to the serial port
-* @param argument: char* message
+* @brief UART print char to the serial port
+* @param argument: uint8 *message
 * @retval None
 */
-void writeASCLINUART(uint8 *message)
+void print(uint8 *message)
 {
     Ifx_SizeT msg_len = strlen(message);                         /* Transmit data via TX                        */
 
     IfxAsclin_Asc_write(&g_ascHandle,
                         message,
+                        &msg_len,
+                        TIME_INFINITE
+                        );
+}
+
+
+/**
+* @brief UART print string with \r\n ending to the serial port
+* @param argument: uint8 *message
+* @retval None
+*/
+void printnl(uint8 *message)
+{
+    Ifx_SizeT income_len = strlen(message);
+    uint8 buf[income_len + 2];
+
+    strcpy(buf, message);
+    strcat(buf, "\r\n");
+
+    Ifx_SizeT msg_len = strlen(buf);
+    IfxAsclin_Asc_write(&g_ascHandle,                           /* Transmit data via TX with \r\n ending       */
+                        buf,
                         &msg_len,
                         TIME_INFINITE
                         );

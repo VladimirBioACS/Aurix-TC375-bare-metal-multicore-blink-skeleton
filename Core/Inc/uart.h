@@ -37,7 +37,8 @@
 /*------------------------------------------------Function Prototypes------------------------------------------------*/
 /*********************************************************************************************************************/
 
-void initASCLINUART(void);
-void writeASCLINUART(uint8 *message);
+void initASCLINUART_IT(void);
+void print(uint8 *message);
+void printnl(uint8 *message);
 
 #endif
