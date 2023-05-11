@@ -31,6 +31,7 @@
 #include "clock_setup.h"
 #include "string.h"
 #include "uart.h"
+#include "SMU_fault_singanling_protocol.h"
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -51,11 +52,17 @@ void core0_main(void)
     /* Config system clocks */
     systemClockConfig();
 
+    /* init SMU with fault signaling protocol */
+    init_SMU_FSP();
+
     /* Init debug UART with TX interrupt*/
     initASCLINUART_IT();
 
     /* Init GPIO ports */
     gpioPreInit();
+
+    /* Trigger FSP alarm */
+    run_FSP_Protocol();
 
     while(1)
     {

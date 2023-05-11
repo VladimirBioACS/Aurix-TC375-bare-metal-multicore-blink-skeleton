@@ -45,4 +45,13 @@
   <v1:configSetting configurationId="pms.hwcfg6.bind" altId="pms.hwcfg6.bind.hwcfg6">
     <v1:connectionSetting altId="p14_4.in.bind.in"/>
   </v1:configSetting>
+  <v1:configSetting configurationId="p33_8.out.bind" altId="p33_8.out.bind.hwout1">
+    <v1:connectionSetting altId="smu.fsp0.bind.out0"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="smu.fsp0.bind" altId="smu.fsp0.bind.out0">
+    <v1:connectionSetting altId="p33_8.out.bind.hwout1"/>
+  </v1:configSetting>
+  <v1:configSetting configurationId="p33_8.dir" altId="p33_8.dir.out"/>
+  <v1:propertySetting propertyId="p33_8.comment" value="SUM_OUT"/>
+  <v1:propertySetting propertyId="p33_8.symbolicname" value="SMU_FSP0"/>
 </v1:pinSettings>
