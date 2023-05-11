@@ -84,3 +84,5 @@ Cpu0_Main.o :	c:/Infineon/AURIX-Studio-1.8.0/plugins/com.infineon.aurix.tools_1.
 c:/Infineon/AURIX-Studio-1.8.0/plugins/com.infineon.aurix.tools_1.8.0/build_system/tools/Compilers/Tasking_1.1r8/ctc/include/string.h :
 Cpu0_Main.o :	c:/Users/volod/AURIX-v1.8.0-workspace/blink_multicore/Core/Inc/uart.h
 c:/Users/volod/AURIX-v1.8.0-workspace/blink_multicore/Core/Inc/uart.h :
+Cpu0_Main.o :	c:/Users/volod/AURIX-v1.8.0-workspace/blink_multicore/Core/Inc/CPU_performance.h
+c:/Users/volod/AURIX-v1.8.0-workspace/blink_multicore/Core/Inc/CPU_performance.h :

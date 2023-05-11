@@ -4,24 +4,28 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/CPU_performance.c \
 ../Core/Src/SMU_fault_singanling_protocol.c \
 ../Core/Src/clock_setup.c \
 ../Core/Src/led_blink.c \
 ../Core/Src/uart.c 
 
 OBJS += \
+./Core/Src/CPU_performance.o \
 ./Core/Src/SMU_fault_singanling_protocol.o \
 ./Core/Src/clock_setup.o \
 ./Core/Src/led_blink.o \
 ./Core/Src/uart.o 
 
 COMPILED_SRCS += \
+./Core/Src/CPU_performance.src \
 ./Core/Src/SMU_fault_singanling_protocol.src \
 ./Core/Src/clock_setup.src \
 ./Core/Src/led_blink.src \
 ./Core/Src/uart.src 
 
 C_DEPS += \
+./Core/Src/CPU_performance.d \
 ./Core/Src/SMU_fault_singanling_protocol.d \
 ./Core/Src/clock_setup.d \
 ./Core/Src/led_blink.d \

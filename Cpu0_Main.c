@@ -32,10 +32,15 @@
 #include "string.h"
 #include "uart.h"
 
-#define SMU_ENB         (0)
+#define SMU_ENB                             (0)
+#define CPU_PERFORMANCE_CHECKER_ENB         (1)
 
 #if (SMU_ENB == 1)
 #include "SMU_fault_singanling_protocol.h"
+#endif
+
+#if (CPU_PERFORMANCE_CHECKER_ENB == 1)
+#include "CPU_performance.h"
 #endif
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
@@ -68,6 +73,11 @@ void core0_main(void)
 #if (SMU_ENB == 1)
     /* Trigger FSP alarm */
     runFspProtocolStub();
+#endif
+
+#if (CPU_PERFORMANCE_CHECKER_ENB == 1)
+    /* Run CPU performance checker */
+    runCpuPerfCounters();
 #endif
 
     while(1)
