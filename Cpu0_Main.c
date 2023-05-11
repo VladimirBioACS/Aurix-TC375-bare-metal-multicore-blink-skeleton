@@ -31,7 +31,12 @@
 #include "clock_setup.h"
 #include "string.h"
 #include "uart.h"
+
+#define SMU_ENB         (0)
+
+#if (SMU_ENB == 1)
 #include "SMU_fault_singanling_protocol.h"
+#endif
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -51,18 +56,19 @@ void core0_main(void)
     
     /* Config system clocks */
     systemClockConfig();
-
+#if (SMU_ENB == 1)
     /* init SMU with fault signaling protocol */
     init_SMU_FSP();
-
+#endif
     /* Init debug UART with TX interrupt*/
     initASCLINUART_IT();
 
     /* Init GPIO ports */
     gpioPreInit();
-
+#if (SMU_ENB == 1)
     /* Trigger FSP alarm */
     run_FSP_Protocol();
+#endif
 
     while(1)
     {

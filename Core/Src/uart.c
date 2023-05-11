@@ -133,7 +133,8 @@ void print(uint8 *message)
 void printnl(uint8 *message)
 {
     Ifx_SizeT income_len = strlen(message);
-    uint8 buf[income_len + 2];
+
+    uint8 buf[income_len];
 
     strcpy(buf, message);
     strcat(buf, "\r\n");
